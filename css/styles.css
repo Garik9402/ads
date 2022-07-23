@@ -35,6 +35,10 @@
   color: #333153;
 }
 
+.descriptions__bottom-item:not(:last-child) {
+  margin: 0px 0px 10px 0px;
+}
+
 .descriptions__world-styles {
   font-family: 'Inter';
   font-style: normal;
@@ -42,6 +46,45 @@
   font-size: 12px;
   line-height: 14px;
   color: #606483;
+}
+
+.progress-bar-w {
+  max-width: 140px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 22px;
+}
+
+.progress-bar {
+  max-width: 104px;
+  width: 100%;
+  height: 8px;
+  background: #EEF2F4;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.progress-bar__progress {
+  width: 48%;
+  height: 100%;
+  background: #606483;
+  border-radius: 30px 0px 0px 30px;
+}
+
+.progress-bar__percent {
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #606483;
+  margin: 0px 0px 0px 10px;
 }
 
 .header-w {
@@ -275,8 +318,6 @@
 }
 
 .filter__control-publications-drropdown {
-  max-width: 176px;
-  width: 100%;
   background: #FFFFFF;
   -webkit-box-shadow: 1px 4px 40px rgba(54, 94, 125, 0.1);
           box-shadow: 1px 4px 40px rgba(54, 94, 125, 0.1);
@@ -288,7 +329,6 @@
 
 .drropdown {
   position: absolute;
-  padding: 0;
   height: 0;
   min-height: 0;
   overflow: hidden;
@@ -457,10 +497,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 228px;
+  width: 100%;
 }
 
 .cards__statistics {
-  max-width: 140px;
+  max-width: 176px;
   width: 100%;
   margin: 0px 52px 0px 0px;
 }
@@ -540,7 +582,7 @@
   width: 100%;
 }
 
-.cards__btns-board-icon-js--active .btns-board-drropdown {
+.btns-board-icon-js--active .btns-board-drropdown {
   max-width: 100px;
   width: 100%;
   height: auto;
@@ -550,14 +592,25 @@
 }
 
 .drropdown-btns-board {
+  position: absolute;
+  width: 142px;
   background: #606483;
   border-radius: 2px;
+  left: 35px;
+  top: -50px;
 }
 
 .drropdown-btns-board__navlist {
-  max-width: 142px;
-  padding: 3px 16px;
   list-style: none;
+}
+
+.drropdown-btns-board__listitem {
+  padding: 3px 16px;
+  text-align: center;
+}
+
+.drropdown-btns-board__listitem:hover {
+  background-color: #333153;
 }
 
 .drropdown-btns-board__itemlink {
@@ -568,10 +621,6 @@
   text-align: right;
   color: #FFFFFF;
   text-decoration: none;
-}
-
-.descriptions__bottom-item {
-  margin-bottom: 10px;
 }
 
 .section {
