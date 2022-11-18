@@ -53,3 +53,16 @@ iconMore.forEach(elem => {
 
    })
 })
+
+let fiterCh = document.querySelector('.filter__checkbox-name-w')
+document.querySelector('.filter__checkbox-name-w').addEventListener('click', funcApp)
+
+function funcApp() {
+   const cardsNode = Array.from(document.querySelectorAll('.cards__items'))
+   const archiveNode = document.getElementById('archive')
+   cardsNode.forEach(el => {
+      if (el.querySelector('.checkbox').checked == true) {
+         archiveNode.appendChild(el)
+      }
+   })
+}
