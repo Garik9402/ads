@@ -209,6 +209,10 @@
         width: inherit;
         display: flex;
         justify-content: space-between;
+
+        @include mq (md) {
+           flex-direction: column;
+        }
      }
 
      &__checkbox-w {
@@ -231,6 +235,11 @@
      &__drropdowns {
         position: relative;
         display: flex;
+
+        @include mq (md) {
+           margin-top: 20px;
+           justify-content: flex-end;
+        }
      }
 
      &__drropdown {
@@ -389,23 +398,42 @@
         width: 100%;
         margin: 0 auto;
         padding: 0 15px;
+
+        @include mq (lg) {
+           display: flex;
+           flex-wrap: wrap;
+        }
      }
 
      &__items {
+        width: 100%;
         padding: 20px 0px 24px 0px;
         display: flex;
         justify-content: space-between;
+
+        @include mq (lg) {
+           flex-direction: column;
+           max-width: 250px;
+           width: 100%;
+        }
+
+        @include mq (md) {}
      }
 
      &__content {
         width: 100%;
         display: flex;
+
+        @include mq (lg) {
+           flex-direction: column;
+        }
      }
 
      &__img {
         position: relative;
         max-width: 230px;
         width: 100%;
+        height: 170px;
         background: #E6F8FF;
         border-radius: 6px;
      }
@@ -434,6 +462,10 @@
 
      &__descriptions {
         margin: 0px 0px 0px 16px;
+
+        @include mq (lg) {
+           margin: 10px 0px;
+        }
      }
 
      &__descriptions-top {
@@ -600,10 +632,17 @@
      }
   }
 
+
   .section {
      display: none;
 
      &--active {
         display: block;
+
+        @include mq(lg) {
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: space-around;
+        }
      }
   }
