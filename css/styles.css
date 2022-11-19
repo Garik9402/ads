@@ -401,6 +401,7 @@
 @media only screen and (max-width: 767px) {
   .cards__inner {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
   }
 }
