@@ -29,13 +29,12 @@ for (let i = 0; i < headerItemlink.length; i++) {
       sectionActiveNode[index].classList.add('section--active')
    })
 }
-//  tabs__nav-itemlink--active
 
 
 // откытие меню фильтра при клике.
 let openDrrop = document.querySelectorAll('.filter__drropdown')
 openDrrop.forEach(function (e) {
-   e.addEventListener('click', function () {
+   e.addEventListener('click', function (e) {
       openDrrop.forEach(function (e) {
          e.classList.remove('filter__drropdown--js-toggle-opn-drrop')
       })
