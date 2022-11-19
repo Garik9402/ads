@@ -1,10 +1,50 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* inter-300 - latin_cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/inter-v12-latin_cyrillic-300.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../fonts/inter-v12-latin_cyrillic-300.eot?#iefix") format("embedded-opentype"), url("../fonts/inter-v12-latin_cyrillic-300.woff2") format("woff2"), url("../fonts/inter-v12-latin_cyrillic-300.woff") format("woff"), url("../fonts/inter-v12-latin_cyrillic-300.ttf") format("truetype"), url("../fonts/inter-v12-latin_cyrillic-300.svg#Inter") format("svg");
+  /* Legacy iOS */
+}
+/* inter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/inter-v12-latin_cyrillic-regular.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../fonts/inter-v12-latin_cyrillic-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/inter-v12-latin_cyrillic-regular.woff2") format("woff2"), url("../fonts/inter-v12-latin_cyrillic-regular.woff") format("woff"), url("../fonts/inter-v12-latin_cyrillic-regular.ttf") format("truetype"), url("../fonts/inter-v12-latin_cyrillic-regular.svg#Inter") format("svg");
+  /* Legacy iOS */
+}
+/* inter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/inter-v12-latin_cyrillic-500.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../fonts/inter-v12-latin_cyrillic-500.eot?#iefix") format("embedded-opentype"), url("../fonts/inter-v12-latin_cyrillic-500.woff2") format("woff2"), url("../fonts/inter-v12-latin_cyrillic-500.woff") format("woff"), url("../fonts/inter-v12-latin_cyrillic-500.ttf") format("truetype"), url("../fonts/inter-v12-latin_cyrillic-500.svg#Inter") format("svg");
+  /* Legacy iOS */
+}
+/* inter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/inter-v12-latin_cyrillic-600.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../fonts/inter-v12-latin_cyrillic-600.eot?#iefix") format("embedded-opentype"), url("../fonts/inter-v12-latin_cyrillic-600.woff2") format("woff2"), url("../fonts/inter-v12-latin_cyrillic-600.woff") format("woff"), url("../fonts/inter-v12-latin_cyrillic-600.ttf") format("truetype"), url("../fonts/inter-v12-latin_cyrillic-600.svg#Inter") format("svg");
+  /* Legacy iOS */
+}
 .filter__worlds-styles {
   font-family: "Inter";
   font-weight: 400;
@@ -386,16 +426,59 @@
     flex-direction: column;
   }
 }
-.cards__img {
+.cards__img-w {
   position: relative;
-  max-width: 230px;
-  width: 100%;
+  width: 230px;
   height: 170px;
   background: #E6F8FF;
   border-radius: 6px;
 }
+.cards__img-slider {
+  width: 230px;
+  height: 170px;
+  /* Лента слайдов */
+  /* Активная точка */
+  /* Элемент точки */
+}
+.cards__img-slider .slick-list {
+  overflow: hidden;
+}
+.cards__img-slider .slick-track {
+  display: flex;
+}
+.cards__img-slider .slick-dots {
+  position: absolute;
+  bottom: 11px;
+  display: flex;
+  z-index: 10;
+  left: 40%;
+  list-style: none;
+}
+.cards__img-slider .slick-dots li {
+  margin: 0px 2.5px;
+}
+.cards__img-slider .slick-dots li.slick-active button {
+  opacity: 1;
+}
+.cards__img-slider .slick-dots li button {
+  font-size: 0;
+  width: 5.6px;
+  height: 5.6px;
+  background: #FFFFFF;
+  box-shadow: 1px 4px 12px rgba(54, 94, 125, 0.1);
+  border-radius: 50%;
+  border: 0;
+  opacity: 0.5;
+}
+.cards__img {
+  max-width: 100%;
+  height: 170px;
+  margin: 0;
+}
 .cards__img-checkbox-w {
-  padding: 12px 0px 0px 12px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
 }
 .cards__img-icon-w {
   position: absolute;
@@ -407,8 +490,8 @@
 }
 .cards__img-hotmark-w {
   position: absolute;
-  bottom: -5px;
-  left: -5px;
+  bottom: -6px;
+  left: 0px;
 }
 .cards__descriptions {
   margin: 0px 0px 0px 16px;

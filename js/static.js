@@ -1,3 +1,18 @@
+//slider 
+$(document).ready(function () {
+   $(".cards__img-slider").slick({
+      arrows: false,
+      dots: true,
+      slidesToShow: 1,
+      speed: 1000,
+      autoplay: true,
+      slidesToScroll: 1,
+      infinite: false,
+   });
+});
+
+
+
 //табы
 let headerItemlink = document.querySelectorAll('.tabs__nav-itemlink')
 let sectionActiveNode = document.querySelectorAll('.section')
@@ -53,16 +68,35 @@ iconMore.forEach(elem => {
 
    })
 })
-
-let fiterCh = document.querySelector('.filter__checkbox-name-w')
+// добавление карт в архив и количество 
 document.querySelector('.filter__checkbox-name-w').addEventListener('click', funcApp)
-
 function funcApp() {
    const cardsNode = Array.from(document.querySelectorAll('.cards__items'))
    const archiveNode = document.getElementById('archive')
-   cardsNode.forEach(el => {
-      if (el.querySelector('.checkbox').checked == true) {
-         archiveNode.appendChild(el)
+   const checkboxMain = document.querySelector('.checkbox-main')
+   checkboxMain.addEventListener('click', function () {
+      let arr = Array.from(activedNode)
+      arr.forEach(e => {
+         e.querySelector('.checkbox').checked = true
+      })
+
+      if (checkboxMain.checked == false) {
+         cardsNode.forEach(el => {
+            el.querySelector('.checkbox').checked = false
+         })
       }
    })
+   let activedNode = document.querySelector('.actived').children
+   cardsNode.forEach(el => {
+      if (el.querySelector('.checkbox').checked == true) {
+         archiveNode.append(el)
+         el.querySelector('.checkbox').checked = false
+         let amoutActivedCards = document.querySelector('.actived-amount')
+         let amoutArchiveCards = document.querySelector('.archive-amount')
+         amoutActivedCards.innerText = activedNode.length
+         amoutArchiveCards.innerText = archiveNode.children.length
+      }
+
+   })
 }
+funcApp()
