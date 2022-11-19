@@ -24,7 +24,7 @@
   }
 
   .descriptions__price {
-     font-family: 'Inter';
+     font-family: 'Inter', sans-serif;
      font-weight: 600;
      font-size: 16px;
      line-height: 22px;
@@ -157,7 +157,7 @@
      }
 
      &__nav-itemlink {
-        font-family: 'Inter';
+        font-family: 'Inter', sans-serif;
         font-weight: 500;
         font-size: 16px;
         line-height: 22px;
@@ -524,7 +524,7 @@
      }
 
      &__descriptions-top {
-        margin: 0px 0px 20px 0px;
+        margin: 0px 0px 16px 0px;
      }
 
      &__descriptions-title {
@@ -629,6 +629,38 @@
      }
   }
 
+  .company {
+     width: 100%;
+     display: flex;
+     text-decoration: none;
+     font-style: normal;
+     margin-bottom: 16px;
+
+     &__logo {
+        margin-right: 10px;
+     }
+
+     &__description {}
+
+     &__title {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #333153;
+
+     }
+
+     &__address {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: #606483;
+     }
+  }
+
   .icon-more {
      &--js-active .drropdown-btns-board {
         padding: 10px;
@@ -690,6 +722,7 @@
 
   .section {
      display: none;
+     width: 100%;
 
      &--active {
         display: block;

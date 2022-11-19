@@ -67,7 +67,7 @@
 }
 
 .descriptions__price {
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
@@ -188,7 +188,7 @@
   margin-left: 24px;
 }
 .tabs__nav-itemlink {
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
@@ -503,7 +503,7 @@
   }
 }
 .cards__descriptions-top {
-  margin: 0px 0px 20px 0px;
+  margin: 0px 0px 16px 0px;
 }
 .cards__descriptions-title--color-red {
   color: #FF5A50;
@@ -586,6 +586,32 @@
   background-color: #080534;
 }
 
+.company {
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  font-style: normal;
+  margin-bottom: 16px;
+}
+.company__logo {
+  margin-right: 10px;
+}
+.company__title {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333153;
+}
+.company__address {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #606483;
+}
+
 .icon-more--js-active .drropdown-btns-board {
   padding: 10px;
   height: auto;
@@ -636,6 +662,7 @@
 
 .section {
   display: none;
+  width: 100%;
 }
 .section--active {
   display: block;
