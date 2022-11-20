@@ -28,23 +28,9 @@ for (let i = 0; i < headerItemlink.length; i++) {
          sectionActiveNode[b].classList.remove('section--active')
       }
       sectionActiveNode[index].classList.add('section--active')
-      for (let f = 0; f < checkboxNode.length; f++) {
-         checkboxNode[f].classList.remove('filter__checkbox--js-active')
-      }
-      headerItemlink[i].removeAttribute('data.id', 'nul')
-      checkboxNode[index].classList.add('filter__checkbox--js-active')
-
    })
 }
 // переход с активных публикаций в архив
-checkboxNode.forEach(el => {
-   el.addEventListener('click', function () {
-      checkboxNode.forEach(elem => {
-         elem.classList.remove('filter__checkbox--js-active')
-      })
-      this.classList.add('filter__checkbox--js-active')
-   })
-})
 //работа с архивом(публикация карты) + чекбоксы
 
 // откытие меню фильтра при клике.
