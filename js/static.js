@@ -30,30 +30,15 @@ for (let i = 0; i < headerItemlink.length; i++) {
       sectionActiveNode[index].classList.add('section--active')
    })
 }
-// переход с активных публикаций в архив
-//работа с архивом(публикация карты) + чекбоксы
 
 // откытие меню фильтра при клике.
-let openDrrop = document.querySelectorAll('.filter__drropdown')
-openDrrop.forEach(function (e) {
-   e.addEventListener('click', function (e) {
-      openDrrop.forEach(function (e) {
-         e.classList.remove('filter__drropdown--js-toggle-opn-drrop')
-      })
-      this.classList.add('filter__drropdown--js-toggle-opn-drrop')
-
-   })
-})
-
-
+let openDrrop = document.querySelector('.filter__drropdown')
 window.addEventListener('click', function (e) {
-   openDrrop.forEach(function (item) {
-      if (item.contains(e.target)) {
-         item.classList.add('filter__drropdown--js-toggle-opn-drrop')
-      } else {
-         item.classList.remove('filter__drropdown--js-toggle-opn-drrop')
-      }
-   })
+   if (openDrrop.contains(e.target)) {
+      openDrrop.classList.add('filter__drropdown--js-toggle-opn-drrop')
+   } else {
+      openDrrop.classList.remove('filter__drropdown--js-toggle-opn-drrop')
+   }
 });
 
 
@@ -67,6 +52,15 @@ iconMore.forEach(elem => {
       this.classList.add('icon-more--js-active')
    })
 })
+window.addEventListener('click', function (e) {
+   iconMore.forEach(function (item) {
+      if (item.contains(e.target)) {
+         item.classList.add('icon-more--js-active')
+      } else {
+         item.classList.remove('icon-more--js-active')
+      }
+   })
+});
 // добавление карты в архив + чекбоксы
 document.querySelector('.filter__checkbox-name-w').addEventListener('click', funcApp)
 function funcApp() {
@@ -108,6 +102,7 @@ archiveItems.forEach(el => {
    })
 
 })
+
 // количество товаров 'Aктивные' 'Архив'
 function amountFunc() {
    let activedNode = document.querySelector('.actived').children
@@ -117,6 +112,51 @@ function amountFunc() {
    amoutActivedCards.innerText = activedNode.length
    amoutArchiveCards.innerText = archiveNode.children.length
 }
+
+
+
+// сортировка карты по дате
+const dataInc = document.getElementById('data-increase').addEventListener('click', funcDataInc)
+const dataDesc = document.getElementById('data-descending').addEventListener('click', funcDataDesc)
+
+function funcDataInc() {
+   let activedNode = document.querySelector('#actived')
+   let items = activedNode.childNodes;
+   let itemsArr = [];
+   for (let i in items) {
+      if (items[i].nodeType == 1) {
+         itemsArr.push(items[i]);
+      }
+   }
+   itemsArr.sort(function (a, b) {
+      return parseFloat(a.getAttribute('data-id')) == parseFloat(b.getAttribute('data-id')) ?
+         0 :
+         (parseFloat(a.getAttribute('data-id')) < parseFloat(b.getAttribute('data-id')) ? 1 : -1);
+   });
+   for (let i = 0; i < itemsArr.length; ++i) {
+      activedNode.appendChild(itemsArr[i]);
+   }
+}
+function funcDataDesc() {
+   let activedNode = document.querySelector('#actived')
+   let items = activedNode.childNodes;
+   let itemsArr = [];
+   for (let i in items) {
+      if (items[i].nodeType == 1) {
+         itemsArr.push(items[i]);
+      }
+   }
+   itemsArr.sort(function (a, b) {
+      return parseFloat(a.getAttribute('data-id')) == parseFloat(b.getAttribute('data-id')) ?
+         0 :
+         (parseFloat(a.getAttribute('data-id')) > parseFloat(b.getAttribute('data-id')) ? 1 : -1);
+   });
+   for (let i = 0; i < itemsArr.length; ++i) {
+      activedNode.appendChild(itemsArr[i]);
+   }
+}
+
+
 
 // сортировка карты по цене
 const itemInc = document.getElementById('item-increase').addEventListener('click', funcInc)

@@ -31,20 +31,7 @@
      color: #333153;
   }
 
-  .descriptions__bottom-item {
-     &:not(:last-child) {
-        margin: 0px 0px 10px 0px;
-     }
-  }
 
-  .descriptions__world-styles {
-     font-family: 'Inter';
-     font-style: normal;
-     font-weight: 400;
-     font-size: 12px;
-     line-height: 14px;
-     color: #606483;
-  }
 
   .progress-bar-w {
      max-width: 140px;
@@ -243,10 +230,15 @@
      }
 
      &__checkbox-name {
+        font-family: 'Inter';
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: #606483;
         cursor: pointer;
      }
 
-     &__drropdowns {
+     &__selects {
         position: relative;
         display: flex;
 
@@ -271,11 +263,11 @@
         border-radius: 6px;
         padding: 6px 10px 6px 12px;
         cursor: pointer;
+        display: flex;
+        align-items: center;
      }
 
-     &__drropdown-arrow {
-        margin-left: 7.25px;
-     }
+
 
      &__drropdown-ads {
         left: -10px;
@@ -287,7 +279,16 @@
         border-radius: 6px;
      }
 
-     &__control-publications {
+     &__name {
+        font-family: 'Inter';
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: #606483;
+        cursor: pointer;
+     }
+
+     &__select {
         padding: 6px 8px 6px 10px;
         background: #F3F6F8;
         border-radius: 6px;
@@ -295,12 +296,21 @@
         margin-left: 8px;
      }
 
-     &__control-publications-items {
+     &__select-items {
         display: flex;
         align-items: center;
      }
 
-     &__control-publications-arrowup {
+     &__name {
+        font-family: 'Inter';
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: #606483;
+        cursor: pointer;
+     }
+
+     &__select-arrowup {
         margin: 0px 0px 0px 8px;
      }
 
@@ -580,6 +590,12 @@
      }
 
      &__title {
+        font-family: 'Inter';
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: #2F93E1;
+
         &--color-red {
            color: #FF5A50;
         }
@@ -590,6 +606,22 @@
 
         &--color-rose {
            color: #D75DC3;
+        }
+     }
+
+     &__descriptions-nav-list {
+        list-style: none;
+     }
+
+     &__descriptions-nav-list-item {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: #606483;
+
+        &:not(:last-child) {
+           margin: 0px 0px 8px 0px;
         }
      }
 
@@ -629,6 +661,14 @@
 
      &__statistics-itemamout-w {
         margin: 0px 0px 0px 8px;
+     }
+
+     &__statistics-itemname {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: #080534;
      }
 
      &__statistics-itemamout {
