@@ -31,18 +31,23 @@ for (let i = 0; i < headerItemlink.length; i++) {
 }
 
 // откытие меню фильтра при клике.
-let openDrrop = document.querySelector('.filter__drropdown')
+let filterDrrop = document.querySelector('.filter__drropdown')
+let dropdownNode = document.querySelector('.filter__drropdown-menu')
 window.addEventListener('click', function (e) {
-   if (openDrrop.contains(e.target)) {
-      openDrrop.classList.add('filter__drropdown--js-toggle-opn-drrop')
-   } else {
-      openDrrop.classList.remove('filter__drropdown--js-toggle-opn-drrop')
+   if (filterDrrop.contains(e.target)) {
+      filterDrrop.classList.add('filter__drropdown--js-toggle-opn-drrop')
+      if ((dropdownNode.contains(e.target))) {
+         filterDrrop.classList.remove('filter__drropdown--js-toggle-opn-drrop')
+      }
+   }
+   else {
+      filterDrrop.classList.remove('filter__drropdown--js-toggle-opn-drrop')
    }
 });
 
-
-// открытие дропдауна в доске с иконками 
+// открытие и закрытие дропдауна в доске с иконками 
 let iconMore = document.querySelectorAll('.icon-more')
+let dropdownList = document.querySelectorAll('.card__btns-dropdown')
 iconMore.forEach(elem => {
    elem.addEventListener('click', function () {
       iconMore.forEach(el => {
@@ -55,11 +60,18 @@ window.addEventListener('click', function (e) {
    iconMore.forEach(function (item) {
       if (item.contains(e.target)) {
          item.classList.add('icon-more--js-active')
+         dropdownList.forEach(elem => {
+            if (elem.contains(e.target)) {
+               item.classList.remove('icon-more--js-active')
+            }
+         })
       } else {
          item.classList.remove('icon-more--js-active')
       }
    })
 });
+
+
 // добавление карты в архив + чекбоксы
 document.querySelector('.filter__checkbox-name-w').addEventListener('click', funcApp)
 function funcApp() {
