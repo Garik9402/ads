@@ -12,7 +12,6 @@ $(document).ready(function () {
 });
 
 
-
 //табы
 let headerItemlink = document.querySelectorAll('.tabs__nav-itemlink')
 let sectionActiveNode = document.querySelectorAll('.section')
@@ -115,7 +114,7 @@ function amountFunc() {
 
 
 
-// сортировка карты по дате
+// сортировка карты по датам
 const dataInc = document.getElementById('data-increase').addEventListener('click', funcDataInc)
 const dataDesc = document.getElementById('data-descending').addEventListener('click', funcDataDesc)
 
@@ -158,7 +157,7 @@ function funcDataDesc() {
 
 
 
-// сортировка карты по цене
+// сортировка карты по ценам
 const itemInc = document.getElementById('item-increase').addEventListener('click', funcInc)
 const itemDesc = document.getElementById('item-descending').addEventListener('click', funcDesc)
 function funcDesc() {
